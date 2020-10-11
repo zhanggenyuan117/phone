@@ -1,0 +1,48 @@
+module.exports = function(){
+    return{
+        "msg": "操作成功",
+        "code": 0,
+        "grid":[
+            {
+                id:1,
+                title:'清仓特卖',
+                url:'//img12.360buyimg.com/img/s80x80_jfs/t1/101343/9/13798/5312/5e5cb38cef1d04468/8c9c8051031687b1.png.webp'
+            },
+            {
+                id:2,
+                title:'9.9包邮',
+                url:'//img20.360buyimg.com/jdphoto/s80x80_jfs/t1/95401/22/8604/9217/5e05c59de8c2e1a69/bafa8250b304172a.png.webp'
+            },
+            {
+                id:3,
+                title:'1元福利',
+                url:'//img12.360buyimg.com/img/s80x80_jfs/t1/110558/30/7559/4809/5e5dc24be54a3f528/f6881437e400e6b9.png.webp'
+            },
+            {
+                id:4,
+                title:'充值中心',
+                url:'//img12.360buyimg.com/img/s80x80_jfs/t1/116584/18/3645/3249/5ea92c17e92cac3cc/3d7645d05a463529.png.webp'
+            },
+            {
+                id:5,
+                title:'0元领水果',
+                url:'//img12.360buyimg.com/img/s80x80_jfs/t1/86819/28/12869/9945/5e4f6f82e5830667b/288f880c661612b7.png.webp'
+            },
+            {
+                id:6,
+                title:'1元领礼盒',
+                url:'//img12.360buyimg.com/img/s80x80_jfs/t1/99379/17/13907/5586/5e5dc272ea9d0ad6a/3a3b4a4074acef24.png.webp'
+            },
+            {
+                id:7,
+                title:'任务赚金币',
+                url:'//img12.360buyimg.com/img/jfs/t1/94147/32/9522/9443/5e0eff8becae4a9a0/e725e9709f79b38d.png.webp'
+            },
+            {
+                id:8,
+                title:'好物零元造',
+                url:'//img12.360buyimg.com/img/s78x75_jfs/t1/85650/38/17918/7536/5e8ed647e0fabfb1e/e5337e49e960da3e.png.webp'
+            },
+        ]
+    }
+}

@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="mine">
       <nav-bar></nav-bar>
   </div>
 </template>
@@ -8,12 +8,12 @@
 import NavBar from '@components/NavBar.vue'
 import { provide } from 'vue'
 export default {
-  name:'About',
+  name:'Mine',
   components:{
     NavBar
   },
   setup(){
-    provide('title','分类')
+    provide('title','我的')
     return{
 
     }

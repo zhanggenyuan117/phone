@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="cart">
       <nav-bar></nav-bar>
   </div>
 </template>
@@ -8,12 +8,12 @@
 import NavBar from '@components/NavBar.vue'
 import { provide } from 'vue'
 export default {
-  name:'About',
+  name:'Cart',
   components:{
     NavBar
   },
   setup(){
-    provide('title','分类')
+    provide('title','购物车')
     return{
 
     }
