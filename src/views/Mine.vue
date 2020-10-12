@@ -1,6 +1,7 @@
 <template>
   <div class="mine">
       <nav-bar></nav-bar>
+      我的
   </div>
 </template>
 

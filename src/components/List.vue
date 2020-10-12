@@ -24,6 +24,7 @@
 <script>
 import { reactive, toRefs } from "vue";
 import request from "./../utils/axios";
+import router from '@/router/index.js';
 export default {
   name: "List",
   setup() {
@@ -49,7 +50,7 @@ export default {
     getList();
 
     let jumpDetails = id => {
-        console.log(id)
+        router.push(`/details/${id}`)
     }
     return {
       getList,
