@@ -32,5 +32,8 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+.navbar{
+  background-color: rgba(255,255,255,.7);
+}
 </style>

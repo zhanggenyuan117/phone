@@ -30,19 +30,23 @@
       </van-grid>
     </div>
     <List class="list"/>
+   
   </div>
+   <Tabbar class="tabbar"/>
 </template>
 
 <script>
 import { onMounted, provide, reactive, ref, toRefs } from "vue";
 import NavBar from "@components/NavBar.vue";
 import request from "./../utils/axios";
-import List from '@components/List.vue'
+import List from '@components/List.vue';
+import Tabbar from '@components/Tabbar.vue'
 export default {
   name: "Home",
   components: {
     NavBar,
-    List
+    List,
+    Tabbar
   },
   setup() {
     provide("title", "首页");

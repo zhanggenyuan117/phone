@@ -10,8 +10,11 @@ module.exports = function () {
             'http://m.360buyimg.com/mobilecms/s843x843_jfs/t1/68285/22/10775/231347/5d838c0aE7ad84594/060fcbddf52b9d9b.jpg',
             'http://m.360buyimg.com/mobilecms/s843x843_jfs/t1/79209/14/10732/248949/5d838c08E943c2458/7138f41b20036d84.jpg',
             'http://m.360buyimg.com/mobilecms/s843x843_jfs/t1/70716/38/10775/253300/5d838c0aEebd21266/7837f4319c6dc460.jpg',
-            'http://m.360buyimg.com/mobilecms/s843x843_jfs/t1/58247/18/11380/184314/5d838c0bEba50c9df/4aadbb9e5a100127.jpg',
-            'http://m.360buyimg.com/mobilecms/s843x843_jfs/t1/80097/34/10767/206660/5d838c0bE8a3634ac/a7151d8cf8b344aa.jpg'
-        ]
+            // 'http://m.360buyimg.com/mobilecms/s843x843_jfs/t1/58247/18/11380/184314/5d838c0bEba50c9df/4aadbb9e5a100127.jpg',
+            // 'http://m.360buyimg.com/mobilecms/s843x843_jfs/t1/80097/34/10767/206660/5d838c0bE8a3634ac/a7151d8cf8b344aa.jpg'
+        ],
+        "price":'9.99',
+        "title":"南极人毛毯 拉舍尔毛毯被子夏天毯子夏凉毯加厚双层单人法兰绒床单珊瑚绒毯子超柔保暖盖毯 701灰色三角 双层加厚200*230cm【约9斤】",
+
     }
 }

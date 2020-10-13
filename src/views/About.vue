@@ -2,15 +2,18 @@
   <div class="about">
       <nav-bar></nav-bar>
   </div>
+  <Tabbar class="tabbar"/>
 </template>
 
 <script>
-import NavBar from '@components/NavBar.vue'
+import NavBar from '@components/NavBar.vue';
+import Tabbar from '@components/Tabbar.vue'
 import { provide } from 'vue'
 export default {
   name:'About',
   components:{
-    NavBar
+    NavBar,
+    Tabbar
   },
   setup(){
     provide('title','分类')
