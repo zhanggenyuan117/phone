@@ -1,12 +1,11 @@
 import Vuex from 'vuex'
-
+import persistedstate from 'vuex-persistedstate'
+import cart from './modules/cart'
 export default Vuex.createStore({
-  state: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
-  modules: {
+  plugins:[
+    persistedstate()
+  ],
+  modules:{
+    cart
   }
-});
+})

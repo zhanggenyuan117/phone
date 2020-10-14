@@ -36,10 +36,11 @@
       </div>
     </div>
     <div class="footer">
+      <!-- badge="12" -->
       <van-action-bar>
-        <van-action-bar-icon icon="chat-o" text="客服" dot />
-        <van-action-bar-icon icon="cart-o" text="购物车" badge="5" />
-        <van-action-bar-icon icon="shop-o" text="店铺" badge="12" />
+        <van-action-bar-icon icon="chat-o" text="客服" @click="serviceHandle"/>
+        <van-action-bar-icon icon="cart-o" text="购物车" @click="cartHandle" :badge="num"/>
+        <van-action-bar-icon icon="shop-o" text="店铺" @click="storeHandle" />
         <van-action-bar-button type="warning" text="加入购物车" />
         <van-action-bar-button type="danger" text="立即购买" />
       </van-action-bar>
@@ -48,12 +49,14 @@
 </template>
 
 <script>
-import { provide, reactive, ref, toRef, toRefs } from "vue";
+import { computed, onMounted, provide, reactive, ref, toRef, toRefs } from "vue";
 import NavBar from "@/components/NavBar.vue";
 import router from "@/router/index.js";
 import request from "./../utils/axios";
 import { createApp } from "vue";
 import { Toast, ActionBar, ActionBarIcon, ActionBarButton } from "vant";
+import { useStore } from 'vuex'
+// import store from './../store/index'
 const app = createApp();
 app.use(Toast);
 app.use(ActionBar);
@@ -65,6 +68,13 @@ export default {
     NavBar,
   },
   setup() {
+    const store = useStore();
+    let cartNumber = reactive({
+      num:0
+    })
+    onMounted(()=>{
+      cartNumber.num = store.state.cart.carNumber
+    })
     provide("title", "商品详情");
     const collection = ref(false);
     let collectionHandle = () => {
@@ -111,13 +121,32 @@ export default {
     let swiperChange = (index) => {
       info.current = index;
     };
+    //客服按钮
+    let serviceHandle = ()=>{
+      Toast('此功能尚未开发')
+    }
+    //店铺按钮
+    let storeHandle = ()=>{
+      Toast('此功能尚未开发')
+    }
+    //购物车按钮
+    let cartHandle = () =>{
+      router.push({
+        name:'Cart'
+      })
+    }
     return {
+      // cartNumber,
+      ...toRefs(cartNumber),
       uid,
       getInfo,
       ...toRefs(info),
       swiperChange,
       collection,
       collectionHandle,
+      serviceHandle,
+      storeHandle,
+      cartHandle
     };
   },
 };
