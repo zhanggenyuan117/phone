@@ -38,24 +38,37 @@
     <div class="footer">
       <!-- badge="12" -->
       <van-action-bar>
-        <van-action-bar-icon icon="chat-o" text="客服" @click="serviceHandle"/>
-        <van-action-bar-icon icon="cart-o" text="购物车" @click="cartHandle" :badge="num"/>
+        <van-action-bar-icon icon="chat-o" text="客服" @click="serviceHandle" />
+        <van-action-bar-icon
+          icon="cart-o"
+          text="购物车"
+          @click="cartHandle"
+          :badge="cart_num"
+        />
         <van-action-bar-icon icon="shop-o" text="店铺" @click="storeHandle" />
-        <van-action-bar-button type="warning" text="加入购物车" />
-        <van-action-bar-button type="danger" text="立即购买" />
+        <van-action-bar-button type="warning" text="加入购物车" @click="addCartNumHandle"/>
+        <van-action-bar-button type="danger" text="立即购买" @click="buyNowHandle"/>
       </van-action-bar>
     </div>
   </div>
 </template>
 
 <script>
-import { computed, onMounted, provide, reactive, ref, toRef, toRefs } from "vue";
+import {
+  computed,
+  onMounted,
+  provide,
+  reactive,
+  ref,
+  toRef,
+  toRefs,
+} from "vue";
 import NavBar from "@/components/NavBar.vue";
 import router from "@/router/index.js";
 import request from "./../utils/axios";
 import { createApp } from "vue";
 import { Toast, ActionBar, ActionBarIcon, ActionBarButton } from "vant";
-import { useStore } from 'vuex'
+import { useStore } from "vuex";
 // import store from './../store/index'
 const app = createApp();
 app.use(Toast);
@@ -69,12 +82,7 @@ export default {
   },
   setup() {
     const store = useStore();
-    let cartNumber = reactive({
-      num:0
-    })
-    onMounted(()=>{
-      cartNumber.num = store.state.cart.carNumber
-    })
+    let cart_num = computed(()=> store.state.cart.cart_num)
     provide("title", "商品详情");
     const collection = ref(false);
     let collectionHandle = () => {
@@ -122,22 +130,32 @@ export default {
       info.current = index;
     };
     //客服按钮
-    let serviceHandle = ()=>{
-      Toast('此功能尚未开发')
-    }
+    let serviceHandle = () => {
+      Toast("此功能尚未开发");
+    };
     //店铺按钮
-    let storeHandle = ()=>{
-      Toast('此功能尚未开发')
-    }
+    let storeHandle = () => {
+      Toast("此功能尚未开发");
+    };
     //购物车按钮
-    let cartHandle = () =>{
+    let cartHandle = () => {
       router.push({
-        name:'Cart'
+        name: "Cart",
+      });
+    }
+    //加入购物车
+    let addCartNumHandle = ()=>{
+      store.commit('cart/setCartNum',1)
+    } 
+    //立即购买
+    let buyNowHandle = ()=>{
+      router.push({
+        name:'Address'
       })
     }
     return {
-      // cartNumber,
-      ...toRefs(cartNumber),
+      //购物车
+      cart_num,
       uid,
       getInfo,
       ...toRefs(info),
@@ -146,7 +164,9 @@ export default {
       collectionHandle,
       serviceHandle,
       storeHandle,
-      cartHandle
+      cartHandle,
+      addCartNumHandle,
+      buyNowHandle
     };
   },
 };

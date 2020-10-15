@@ -1,13 +1,13 @@
 export default{
     namespaced:true,
     state:{
-        carNumber:5
+        cart_num:5
     },
     getters:{
 
     },
     mutations:{
-
+        setCartNum:(state,num) => state.cart_num += num
     },
     actions:{
 
