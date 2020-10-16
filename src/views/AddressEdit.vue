@@ -26,7 +26,6 @@ export default {
     NavBar,
   },
   setup(props, context) {
-    console.log(areaList);
     const result = reactive({
       searchResult: [],
       areaList,
@@ -60,5 +59,6 @@ export default {
 
 <style lang="scss" scoped>
 .addressEdit {
+  
 }
 </style>

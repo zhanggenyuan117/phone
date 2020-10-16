@@ -5,28 +5,35 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    meta:{
+      required:false
+    }
   },
   {
     path: '/details/:id',
     props:true,
     name: 'Details',
-    component: () => import('../views/Details.vue')
+    component: () => import('../views/Details.vue'),
+    meta:{ required:false }
   },
   {
     path: '/about',
     name: 'About',
-    component: () => import('../views/About.vue')
+    component: () => import('../views/About.vue'),
+    meta:{ required:false }
   },
   {
     path: '/mine',
     name: 'Mine',
-    component: () => import('../views/Mine.vue')
+    component: () => import('../views/Mine.vue'),
+    meta:{ required:false }
   },
   {
     path: '/cart',
     name: 'Cart',
-    component: () => import('../views/Cart.vue')
+    component: () => import('../views/Cart.vue'),
+    meta:{ required:true }
   },
   {
     path: '/address',
@@ -36,7 +43,8 @@ const routes = [
   {
     path: '/addressEdit',
     name: 'AddressEdit',
-    component: () => import('../views/AddressEdit.vue')
+    component: () => import('../views/AddressEdit.vue'),
+    meta:{ required:true }
   }
 ]
 

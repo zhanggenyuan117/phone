@@ -82,7 +82,7 @@ export default {
   },
   setup() {
     const store = useStore();
-    let cart_num = computed(()=> store.state.cart.cart_num)
+    let cart_num = computed(()=> store.state.cart.cart_list.length)
     provide("title", "商品详情");
     const collection = ref(false);
     let collectionHandle = () => {
@@ -95,6 +95,7 @@ export default {
       current: 0,
       title: "",
       price: "",
+      id:'',
     });
     let getInfo = () => {
       if (uid.value == "1") {
@@ -102,9 +103,9 @@ export default {
           type: "get",
           url: "/details/info",
         }).then((res) => {
-          console.log(res);
           if (res.code == 0) {
             const { bigImg, title, price } = res;
+            console.log(res)
             info.bigImg = bigImg;
             info.title = title;
             info.price = price;
@@ -115,12 +116,13 @@ export default {
           type: "get",
           url: "/details/info2",
         }).then((res) => {
-          console.log(res);
           if (res.code == 0) {
-            const { bigImg, title, price } = res;
+            const { bigImg, title, price,id } = res;
             info.bigImg = bigImg;
             info.title = title;
             info.price = price;
+            info.id = id;
+            console.log(res)
           }
         });
       }
@@ -145,7 +147,11 @@ export default {
     }
     //加入购物车
     let addCartNumHandle = ()=>{
-      store.commit('cart/setCartNum',1)
+        let url = info.bigImg[0],title = info.title,price = info.price,id = info.id;
+        let obj = {
+          url,title,price,id
+        }
+        store.commit('cart/setCartNum',obj)
     } 
     //立即购买
     let buyNowHandle = ()=>{

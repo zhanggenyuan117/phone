@@ -5,21 +5,31 @@
       <div class="sidebar">
         <van-sidebar v-model="activeKey">
           <van-sidebar-item
-            v-for="item in abouts"
+            v-for="item in side"
             :key="item.id"
             :title="item.title"
           />
         </van-sidebar>
       </div>
       <div class="main">
-        <div v-if="activeKey == 0">11</div>
-        <div v-if="activeKey == 1">22</div>
-        <div v-if="activeKey == 2">33</div>
-        <div v-if="activeKey == 3">44</div>
-        <div v-if="activeKey == 4">55</div>
-        <div v-if="activeKey == 5">66</div>
-        <div v-if="activeKey == 6">77</div>
-        <div v-if="activeKey == 7">88</div>
+        <div v-if="activeKey == 0" class="list_box">
+          <div class="list" v-for="item in main.hoots" :key="item.id" @click="jumpDetails(item.id)">
+            <img :src="item.url" alt="" mode="widthFixed" />
+            <span>{{ item.title }}</span>
+          </div>
+        </div>
+        <div v-if="activeKey == 1">
+          手机数码
+        </div>
+        <div v-if="activeKey == 2">
+          电脑办公
+        </div>
+        <div v-if="activeKey == 3">
+          家用电器
+        </div>
+        <div v-if="activeKey == 4">
+          计生情趣
+        </div>
       </div>
     </div>
     <Tabbar class="tabbar" />
@@ -30,6 +40,8 @@
 import NavBar from "@components/NavBar.vue";
 import Tabbar from "@components/Tabbar.vue";
 import { provide, reactive, ref, toRefs } from "vue";
+import request from "../utils/axios";
+import router from '@/router/index.js'
 export default {
   name: "About",
   components: {
@@ -40,7 +52,7 @@ export default {
     provide("title", "分类");
     let activeKey = ref(0);
     let abouts = reactive({
-      abouts: [
+      side: [
         {
           id: 1,
           title: "热门推荐",
@@ -90,19 +102,119 @@ export default {
           title: "女鞋",
         },
       ],
-      mian:{
-        hoots:[
+      main: {
+        hoots: [
           {
-            url:'',
-            title:'毛毯'
-          }
-        ]
-      }
-    
-    });
+            id:1,
+            url:
+              "//img10.360buyimg.com/mobilecms/s345x345_jfs/t1/87347/24/11553/87003/5e37c3dfef431eb82/baf5d8551f6b1161.jpg!q70.dpg.webp",
+            title: "毛毯",
+          },
+          {
+            id:2,
+            url:
+              "//img10.360buyimg.com/mobilecms/s345x345_jfs/t1/131530/9/8177/145078/5f467929e4ecb8d63/893f6601d0ee2ba4.jpg!q70.dpg.webp",
+            title: "拖鞋",
+          },
+           {
+            id:1,
+            url:
+              "//img10.360buyimg.com/mobilecms/s345x345_jfs/t1/87347/24/11553/87003/5e37c3dfef431eb82/baf5d8551f6b1161.jpg!q70.dpg.webp",
+            title: "毛毯",
+          },
+          {
+            id:2,
+            url:
+              "//img10.360buyimg.com/mobilecms/s345x345_jfs/t1/131530/9/8177/145078/5f467929e4ecb8d63/893f6601d0ee2ba4.jpg!q70.dpg.webp",
+            title: "拖鞋",
+          },
+           {
+            id:1,
+            url:
+              "//img10.360buyimg.com/mobilecms/s345x345_jfs/t1/87347/24/11553/87003/5e37c3dfef431eb82/baf5d8551f6b1161.jpg!q70.dpg.webp",
+            title: "毛毯",
+          },
+          {
+            id:2,
+            url:
+              "//img10.360buyimg.com/mobilecms/s345x345_jfs/t1/131530/9/8177/145078/5f467929e4ecb8d63/893f6601d0ee2ba4.jpg!q70.dpg.webp",
+            title: "拖鞋",
+          },
+           {
+            id:1,
+            url:
+              "//img10.360buyimg.com/mobilecms/s345x345_jfs/t1/87347/24/11553/87003/5e37c3dfef431eb82/baf5d8551f6b1161.jpg!q70.dpg.webp",
+            title: "毛毯",
+          },
+          {
+            id:2,
+            url:
+              "//img10.360buyimg.com/mobilecms/s345x345_jfs/t1/131530/9/8177/145078/5f467929e4ecb8d63/893f6601d0ee2ba4.jpg!q70.dpg.webp",
+            title: "拖鞋",
+          },
+           {
+            id:1,
+            url:
+              "//img10.360buyimg.com/mobilecms/s345x345_jfs/t1/87347/24/11553/87003/5e37c3dfef431eb82/baf5d8551f6b1161.jpg!q70.dpg.webp",
+            title: "毛毯",
+          },
+          {
+            id:2,
+            url:
+              "//img10.360buyimg.com/mobilecms/s345x345_jfs/t1/131530/9/8177/145078/5f467929e4ecb8d63/893f6601d0ee2ba4.jpg!q70.dpg.webp",
+            title: "拖鞋",
+          },
+           {
+            id:1,
+            url:
+              "//img10.360buyimg.com/mobilecms/s345x345_jfs/t1/87347/24/11553/87003/5e37c3dfef431eb82/baf5d8551f6b1161.jpg!q70.dpg.webp",
+            title: "毛毯",
+          },
+          {
+            id:2,
+            url:
+              "//img10.360buyimg.com/mobilecms/s345x345_jfs/t1/131530/9/8177/145078/5f467929e4ecb8d63/893f6601d0ee2ba4.jpg!q70.dpg.webp",
+            title: "拖鞋",
+          },
+           {
+            id:1,
+            url:
+              "//img10.360buyimg.com/mobilecms/s345x345_jfs/t1/87347/24/11553/87003/5e37c3dfef431eb82/baf5d8551f6b1161.jpg!q70.dpg.webp",
+            title: "毛毯",
+          },
+          {
+            id:2,
+            url:
+              "//img10.360buyimg.com/mobilecms/s345x345_jfs/t1/131530/9/8177/145078/5f467929e4ecb8d63/893f6601d0ee2ba4.jpg!q70.dpg.webp",
+            title: "拖鞋",
+          },
+           {
+            id:1,
+            url:
+              "//img10.360buyimg.com/mobilecms/s345x345_jfs/t1/87347/24/11553/87003/5e37c3dfef431eb82/baf5d8551f6b1161.jpg!q70.dpg.webp",
+            title: "毛毯",
+          },
+          {
+            id:2,
+            url:
+              "//img10.360buyimg.com/mobilecms/s345x345_jfs/t1/131530/9/8177/145078/5f467929e4ecb8d63/893f6601d0ee2ba4.jpg!q70.dpg.webp",
+            title: "拖鞋",
+          },
+        ],
+      },
+    })
+    let jumpDetails = (id)=>{
+      router.push({
+        name:'Details',
+        params:{
+          id
+        }
+      })
+    }
     return {
       activeKey,
       ...toRefs(abouts),
+      jumpDetails
     };
   },
 };
@@ -119,7 +231,28 @@ export default {
     }
     .main {
       flex: 10;
-      padding: 10px;
+      .list_box {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 12px;
+        justify-content: space-between;
+        box-sizing: border-box;
+        padding: 3px;
+        .list {
+          box-sizing: border-box;
+          display: flex;
+          flex-direction: column;
+          padding: 5px;
+          width: 30%;
+          img {
+            width: 100%;
+          }
+          span{
+            padding: 3px 0;
+            text-align: center;
+          }
+        }
+      }
     }
   }
 }
