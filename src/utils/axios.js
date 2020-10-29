@@ -1,3 +1,10 @@
+/*
+ * @Author: zhang_gen_yuan
+ * @Date: 2020-10-29 16:42:28
+ * @LastEditTime: 2020-10-29 16:49:24
+ * @Description: 
+ */
+
 import axios from "axios";
 //默认情况下，axios将JavaScript对象序列化为JSON。 要以application / x-www-form-urlencoded格式发送数据，
 //可以使用qs库编码数据；使用方法：qs.stringify(obj);
@@ -79,7 +86,6 @@ instance.interceptors.response.use(
     return Promise.reject(error);
   }
 );
-
 // 封装请求对象
 let request = (options) =>
   new Promise((resolve, reject) => {

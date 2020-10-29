@@ -1,6 +1,11 @@
+/*
+ * @Author: zhang_gen_yuan
+ * @Date: 2020-10-29 16:42:28
+ * @LastEditTime: 2020-10-29 16:48:34
+ * @Description: 
+ */
 import { createRouter, createWebHashHistory } from 'vue-router';
 import Home from '../views/Home.vue'
-
 const routes = [
   {
     path: '/',

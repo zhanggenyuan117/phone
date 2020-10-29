@@ -1,3 +1,9 @@
+<!--
+ * @Author: zhang_gen_yuan
+ * @Date: 2020-10-29 16:42:28
+ * @LastEditTime: 2020-10-29 16:45:14
+ * @Description: 
+-->
 <template>
   <div class="navbar">
     <van-nav-bar
@@ -11,7 +17,7 @@
     >
       <slot name="right"></slot>
     </van-nav-bar>
-  </div>
+  </div> 
 </template>
 
 <script>

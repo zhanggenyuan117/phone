@@ -1,3 +1,4 @@
+
 <template>
   <div class="list">
     <div class="box">
@@ -5,7 +6,7 @@
         <img :src="item.url" />
         <div class="item_title">
           {{ item.title }}
-        </div>
+        </div>    
         <div class="item_rem">
             <van-icon name="good-job-o" style="margin-right:5px;"/>
             <span>{{ item.rem }}</span>

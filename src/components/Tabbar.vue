@@ -1,3 +1,10 @@
+<!--
+ * @Author: zhang_gen_yuan
+ * @Date: 2020-10-29 16:42:28
+ * @LastEditTime: 2020-10-29 16:45:40
+ * @Description: 
+-->
+
 <template>
   <div class="tab">
     <ul v-for="item in tabData" :key="item.name" class="tabItem">
@@ -10,8 +17,8 @@
           {{ item.name }}
         </div>
       </li>
-    </ul>
-  </div>
+    </ul> 
+  </div>  
 </template>
 
 <script>

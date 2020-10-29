@@ -1,3 +1,10 @@
+/*
+ * @Author: zhang_gen_yuan
+ * @Date: 2020-10-29 16:42:28
+ * @LastEditTime: 2020-10-29 16:49:49
+ * @Description: 
+ */
+
 let path = require("path");
 function resolve(dir) {
   return path.join(__dirname, dir);

@@ -1,6 +1,13 @@
+/*
+ * @Author: zhang_gen_yuan
+ * @Date: 2020-10-29 16:42:28
+ * @LastEditTime: 2020-10-29 16:49:33
+ * @Description: 
+ */
+
 export default {
     province_list: {
-      110000: '北京市',
+      110000: '北京市',  
       120000: '天津市',
       130000: '河北省',
       140000: '山西省',
